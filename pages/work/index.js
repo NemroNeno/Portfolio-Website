@@ -8,11 +8,11 @@ import WorkSliderSelf from "./../../components/WorkSliderSelf";
 
 const Work = () => {
   return (
-    <div className="h-screen bg-primary/30  flex items-center">
+    <div className="h-screen bg-primary/60  flex items-center">
       <Circles />
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row gap-x-8 h-screen">
-          <div className="text-center flex xl:w-[50vw] py-[90px] flex-col lg:text-left mb-4 xl:mb-0 min-w-[250px] h-full">
+          <div className="text-center flex xl:w-[50vw]  sm:py-[10px] flex-col lg:text-left sm:mb-4 xl:mb-0 min-w-[250px] h-full">
             <motion.h2
               variants={fadeIn("up", 0.3)}
               initial="hidden"
@@ -27,7 +27,7 @@ const Work = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="mb-4 max-w-[800px] mx-auto lg:mx-0"
+              className="sm:mb-4 max-w-[800px] mx-auto lg:mx-0"
             >
                 Projects I have worked on.
             </motion.p>

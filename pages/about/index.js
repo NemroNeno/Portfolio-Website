@@ -101,12 +101,12 @@ const About = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left overflow-auto  pb-[200px]">
+    <div className="h-full bg-primary/60 max-sm:py-[120px] sm:py-32 text-center xl:text-left overflow-auto lg:overflow-hidden scrollbar-hide  ">
     
       <Circles />
      
-      <div className=" container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-5 pb-[200px]">
-        <div className="flex-l flex flex-col justify-center text-sm pt-[50px] ">
+      <div className=" container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-5 pb-[200px] lg:mt-[100px]">
+        <div className="flex-l flex flex-col justify-center text-sm sm:pt-[50px]">
           <motion.h1 className='h2'
           variants={fadeIn("right", 0.4)}
         initial="hidden"
@@ -151,7 +151,7 @@ variants={fadeIn("right", 0.7)}
 
           <div>
           <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-              <CountUp start={0} end={10} duration={5}/>+
+              <CountUp start={0} end={5} duration={5}/>+
             </div>
             <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px] font-bold animate-pulse duration-[100ms]'>
            Satisfied clients 
@@ -177,19 +177,19 @@ variants={fadeIn("right", 0.7)}
 </motion.div>
 
           </div>
-          <motion.div className="flex flex-col w-[500px]  xl:max-w-[48%] h-[480px] mr-[90px] pb-[200px]"
+          <motion.div className="flex flex-col w-[350px] md:w-[500px]  xl:max-w-[48%] max-sm:mb-[300px] h-[900px] md:h-[480px] md:mr-[90px]  max-sm:pb-[800px] "
           variants={fadeIn("right", 1)}
         initial="hidden"
         animate="show"
         exit="hidden">
-            <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4 mr-[90px]">
+            <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4 md:mr-[90px]">
               {aboutData.map((item, itemIndex) => {
                 return (
                   <div
                     key={itemIndex}
                     className={` ${index===itemIndex&& 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer
           capitalize xl:text-lg relative
-          after:w-8 after:h-[2px] after:bg-white after:absolute
+          after:w-8 after:h-[2px] after:bg-white after:absolute mb-[50px]
           after:-bottom-1 after:left-0 !z-50`}
           onClick={(e)=>{
             e.stopPropagation();
@@ -201,21 +201,21 @@ variants={fadeIn("right", 0.7)}
               })}
             </div>
 
-       <div className="bg-pink-400/10 py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start w-[650px] rounded-xl mr-[90px]">
+       <div className="bg-pink-400/10 py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start w-[350px] md:w-[650px] rounded-xl md:mr-[90px]">
         {aboutData[index].info.map((item,itemIndexed)=>{
           return (
             <div>
             
             <div
-            className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/80 text-xl mx-2"
+            className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/80 md:text-xl  mx-2"
              key={itemIndexed}>
-              <div>{item.title}</div>
+              <div className="max-sm:mb-[30px]">{item.title}</div>
               
               <div className='hidden md:flex text-white/30'>-</div>
               <div className="font-thin text-white/30">{item.stage}</div> 
               <div className='flex gap-x-4'>
               {item.icons?.map((icon,itemIndex)=>{
-                return (<div className='group relative text-4xl hover:text-accent transition-all duration-300' content={<span>Tooltip</span>}>
+                return (<div className='group relative max-sm:text-xl md:text-4xl hover:text-accent transition-all duration-300' content={<span>Tooltip</span>}>
                  { <span className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300 absolute bottom-full mb-2 w-max  text-white text-sm rounded py-2 px-1 shadow-lg">{item.names[itemIndex]}</span>} 
                   {icon}
                   
@@ -226,7 +226,7 @@ variants={fadeIn("right", 0.7)}
               </div> 
                      
             </div>
-            <div class="border-b border-gray-300 w-[650px] mt-[20px]"></div> 
+            <div class="border-b border-gray-300 w-[250px] md:w-[650px] mt-[20px]"></div> 
             </div>
           )
         })}

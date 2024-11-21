@@ -69,14 +69,14 @@ import { ReactTyped } from "react-typed";
       };
     return (
         <div className="max-sm:mt-[10px] slider-container sm:mt-[10px] w-full h-full !z-50">
-         <Modal dismissible show={openModal} onClose={() => setOpenModal(false)} className="!w-[1150px] h-[600px] mt-[100px] mx-auto !z-50 bg-[#080719] border-black rounded-2xl">
+         <Modal dismissible show={openModal} onClose={() => setOpenModal(false)} className="max-sm:!w-[300px] max-sm:h-[500px]   lg:!w-[900px] lg:h-[400px]  xl:!w-[1200px] xl:h-[500px] mt-[100px] mx-auto !z-50 bg-[#080719] border-black rounded-2xl">
         <Modal.Body >
-          <div className=" bg-[#080719] !w-[1150px] h-[550px]">
-           <p className="pt-[20px] pl-[20px] text-5xl font-bold">{pr?.name}</p> 
-           <div className="flex flex-row w-full min-w-[1150px]">
-           <Image src={pr?.image} width={600} height={600} className="h-[300px] w-[600px] mt-[60px] ml-[20px] rounded-xl"/> 
-           <div className="h-[300px] !w-[450px] ml-[40px] bg-opacity-10 backdrop-blur-sm bg-[#080788] border-[1px] border-white/10 rounded-lg p-10 shadow-xl  mt-[60px] ">
-             <p className="mx-auto my-auto text-white text-xl font-normal cursor-pointer"><ReactTyped strings={[pr?.description]} typeSpeed={30}  /></p>
+          <div className=" bg-[#080719] max-sm:!w-[300px] max-sm:h-[500px]   lg:!w-[900px] lg:h-[400px] xl:!w-[1200px] xl:h-[450px] max-sm:pl-[15px]">
+           <p className="pt-[20px] pl-[20px] max-sm:text-sm lg:text-xl xl:text-5xl font-bold">{pr?.name}</p> 
+           <div className="flex flex-col justify-center max-sm:max-w-[300px]  lg:flex-row w-full    xl:min-w-[1150px]">
+           <Image src={pr?.image} width={600} height={600} className="hidden sm:block max-sm:h-[200px] max-sm:w-[250px] lg:h-[200px] lg:w-[400px] xl:h-[200px] xl:w-[600px] mt-[20px] lg:mt-[60px] ml-[20px] rounded-xl"/> 
+           <div className="max-sm:h-[300px] max-sm:!w-[250px]  lg:h-[200px] lg:!w-[350px] xl:h-[300px] xl:!w-[450px] ml-[10px] bg-opacity-10 backdrop-blur-sm bg-[#080788] border-[1px] border-white/10 rounded-lg max-sm:p-4  p-10 shadow-xl mt-[20px] lg:mt-[60px] ">
+             <p className=" lg:my-auto text-white text-sm font-normal cursor-pointer"><ReactTyped strings={[pr?.description]} typeSpeed={30}  /></p>
            </div> 
            </div>
           </div>
